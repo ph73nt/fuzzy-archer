@@ -1,0 +1,2 @@
+serviceClass: couk.fishlegs.NucMedOne.client.GreetingService
+path: 325D9952A3941527DA7B6BBA1739E7DF.gwt.rpc
