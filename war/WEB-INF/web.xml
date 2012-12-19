@@ -22,13 +22,23 @@
 
 	<!-- http security redirection -->
 	<http auto-config="true">
-		<intercept-url pattern="/gwtspringsecurityproject/**" access="ROLE_USER" />
+		<intercept-url pattern="/nucmedone/**" access="ROLE_USER" />
 		<intercept-url pattern="/gwt/**" access="ROLE_USER" />
 		<intercept-url pattern="/**/*.html" access="ROLE_USER" />
 		<intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 	</http>
 
 	<!-- Servlets -->
+	<servlet>
+		<servlet-name>authServlet</servlet-name>
+		<servlet-class>couk.fishlegs.NucMedOne.server.AuthServiceImpl</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>authServlet</servlet-name>
+		<url-pattern>/nucmedone/auth</url-pattern>
+	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>greetServlet</servlet-name>
 		<servlet-class>couk.fishlegs.NucMedOne.server.GreetingServiceImpl</servlet-class>

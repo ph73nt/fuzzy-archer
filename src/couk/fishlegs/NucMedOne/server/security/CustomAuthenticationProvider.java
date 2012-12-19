@@ -1,4 +1,4 @@
-package couk.fishlegs.NucMedOne.server;
+package couk.fishlegs.NucMedOne.server.security;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +9,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 

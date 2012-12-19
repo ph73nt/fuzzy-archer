@@ -1,6 +1,5 @@
 package couk.fishlegs.NucMedOne.client;
 
-import couk.fishlegs.NucMedOne.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -17,6 +16,10 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+import couk.fishlegs.NucMedOne.client.security.AuthService;
+import couk.fishlegs.NucMedOne.client.security.AuthServiceAsync;
+import couk.fishlegs.NucMedOne.shared.FieldVerifier;
+
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
@@ -30,10 +33,15 @@ public class NucMedOne implements EntryPoint {
 			+ "connection and try again.";
 
 	/**
-	 * Create a remote service proxy to talk to the server-side Greeting service.
+	 * Create a remote service proxy to talk to the server-side Greeting
+	 * service.
 	 */
-	private final GreetingServiceAsync greetingService = GWT
-			.create(GreetingService.class);
+	private final GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
+	
+	/**
+	 * Create a remote service proxy to talk to the server-side authorisation service
+	 */
+	private final AuthServiceAsync authService = GWT.create(AuthService.class);
 
 	/**
 	 * This is the entry point method.
@@ -104,7 +112,8 @@ public class NucMedOne implements EntryPoint {
 			}
 
 			/**
-			 * Send the name from the nameField to the server and wait for a response.
+			 * Send the name from the nameField to the server and wait for a
+			 * response.
 			 */
 			private void sendNameToServer() {
 				// First, we validate the input.
@@ -148,5 +157,16 @@ public class NucMedOne implements EntryPoint {
 		MyHandler handler = new MyHandler();
 		sendButton.addClickHandler(handler);
 		nameField.addKeyUpHandler(handler);
+		
+		authService.retrieveUsername(new AsyncCallback<String>() {
+			public void onFailure(Throwable caught) {
+				dialogBox.setText("Remote Procedure Call - Failure");
+			}
+
+			public void onSuccess(String result) {
+				nameField.setText(result);
+			}
+		});
+		
 	}
 }
