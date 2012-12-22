@@ -1,4 +1,4 @@
-package couk.fishlegs.NucMedOne.shared;
+package couk.fishlegs.nucmedone.shared;
 
 /**
  * <p>

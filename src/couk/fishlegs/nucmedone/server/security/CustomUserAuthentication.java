@@ -1,4 +1,4 @@
-package couk.fishlegs.NucMedOne.server.security;
+package couk.fishlegs.nucmedone.server.security;
 
 import java.util.ArrayList;
 import java.util.Collection;

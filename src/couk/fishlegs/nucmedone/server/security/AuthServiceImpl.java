@@ -1,11 +1,11 @@
-package couk.fishlegs.NucMedOne.server.security;
+package couk.fishlegs.nucmedone.server.security;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-import couk.fishlegs.NucMedOne.client.security.AuthService;
+import couk.fishlegs.nucmedone.client.security.AuthService;
 
 public class AuthServiceImpl extends RemoteServiceServlet implements
 		AuthService {

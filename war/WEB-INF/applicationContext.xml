@@ -6,18 +6,18 @@
                         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
 	<beans:bean id="customAuthListener"
-		class="couk.fishlegs.NucMedOne.server.security.CustomAuthListener" />
+		class="couk.fishlegs.nucmedone.server.security.CustomAuthListener" />
 
 	<http auto-config="true">
 		<intercept-url pattern="/nucmedone/**"
 			access="ROLE_USER" />
-		<intercept-url pattern="/gwt/**" access="ROLE_USER" />
+		<!--intercept-url pattern="/gwt/**" access="ROLE_USER" /-->
 		<intercept-url pattern="/**/*.html" access="ROLE_USER" />
 		<intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 	</http>
 
 	<beans:bean id="customAuthenticationProvider"
-		class="couk.fishlegs.NucMedOne.security.server.security.CustomAuthenticationProvider" />
+		class="couk.fishlegs.nucmedone.server.security.CustomAuthenticationProvider" />
 
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider ref="customAuthenticationProvider" />

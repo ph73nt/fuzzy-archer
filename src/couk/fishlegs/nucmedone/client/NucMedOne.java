@@ -1,4 +1,4 @@
-package couk.fishlegs.NucMedOne.client;
+package couk.fishlegs.nucmedone.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
@@ -16,9 +16,9 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-import couk.fishlegs.NucMedOne.client.security.AuthService;
-import couk.fishlegs.NucMedOne.client.security.AuthServiceAsync;
-import couk.fishlegs.NucMedOne.shared.FieldVerifier;
+import couk.fishlegs.nucmedone.client.security.AuthService;
+import couk.fishlegs.nucmedone.client.security.AuthServiceAsync;
+import couk.fishlegs.nucmedone.shared.FieldVerifier;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -47,6 +47,15 @@ public class NucMedOne implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
+		
+		final Button aButton = new Button("Slurp");
+		final Button anButton = new Button("Slurper");
+		
+		
+		
+		RootPanel.get("main").add(aButton);
+		
+		
 		final Button sendButton = new Button("Send");
 		final TextBox nameField = new TextBox();
 		nameField.setText("GWT User");

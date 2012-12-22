@@ -1,4 +1,4 @@
-package couk.fishlegs.NucMedOne.client;
+package couk.fishlegs.nucmedone.client;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;

@@ -1,4 +1,4 @@
-package couk.fishlegs.NucMedOne.server.security;
+package couk.fishlegs.nucmedone.server.security;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

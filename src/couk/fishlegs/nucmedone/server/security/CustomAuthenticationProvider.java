@@ -1,4 +1,4 @@
-package couk.fishlegs.NucMedOne.server.security;
+package couk.fishlegs.nucmedone.server.security;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,22 +16,22 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	private static Map<String, String> users = new HashMap<String, String>();
 
 	static {
-		users.put("Neil", "wiggle");
-		users.put("Jeff", "Bumble");
+		users.put("Neil".toLowerCase(), "wiggle");
+		users.put("Jeff".toLowerCase(), "Bumble");
 	}
 
 	@Override
 	public Authentication authenticate(Authentication authentication)
 			throws AuthenticationException {
 		
-		String username = authentication.getPrincipal().toString();
+		String username = authentication.getPrincipal().toString().toLowerCase();
 		String storedPass = users.get(username);
 		if(storedPass == null){
 			throw new UsernameNotFoundException("User not found");
 		}
 		
 		String password = authentication.getCredentials().toString();
-		if(storedPass != password){
+		if(!(storedPass.equals(password))){
 			throw new BadCredentialsException("Password does not match");
 		}
 		

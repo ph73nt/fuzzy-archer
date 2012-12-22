@@ -1,7 +1,8 @@
-package couk.fishlegs.NucMedOne.server;
+package couk.fishlegs.nucmedone.server;
 
-import couk.fishlegs.NucMedOne.client.GreetingService;
-import couk.fishlegs.NucMedOne.shared.FieldVerifier;
+import couk.fishlegs.nucmedone.client.GreetingService;
+import couk.fishlegs.nucmedone.shared.FieldVerifier;
+
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**

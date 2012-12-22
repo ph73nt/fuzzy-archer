@@ -1,0 +1,12 @@
+/build
+/classes
+*.class
+*~
+/war/WEB-INF/deploy
+/war/nucmedone/gwt
+/war/nucmedone/*.html
+/war/nucmedone/*.rpc
+/war/WEB-INF/classes
+gwt-unitCache
+.gwt
+target
