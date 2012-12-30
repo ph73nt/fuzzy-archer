@@ -1,34 +1,69 @@
 /** Add css rules here for your application. */
+/** Example rules used by the template application (remove for your app) */ h1
+{
+	font-size:2em;
+	font-weight:bold;
+	color:#777777;
+	margin:40px0px70px;
+	text-align:center;
+}
 
+.chamber {
+	background-color:#000000;
+	vertical-align:bottom;
+}
 
-/** Example rules used by the template application (remove for your app) */
-h1 {
-  font-size: 2em;
-  font-weight: bold;
-  color: #777777;
-  margin: 40px 0px 70px;
-  text-align: center;
+.chamber_activity {
+	font-size:3em;
+	font-weight:bold;
+	color:#00FF22;
+	background-color:#000000;
+	vertical-align:text-bottom;
+	/**margin:5px20px20px20px;*/
+	
+	padding-top:0px;
+	padding-bottom:5px;
+	padding-right:5px;
+	padding-left:15px;
+}
+
+.chamber_units {
+	color:#00FF22;
+	background-color:#000000;
+	vertical-align:text-bottom;
+	/**margin:20px20px20px0px;*/
+	
+	padding-top:5px;
+	padding-bottom:15px;
+	padding-right:15px;
+	padding-left:5px;
+}
+
+.chamber_nuclide {
+	color:#00FF22;
+	background-color:#000000;
+	vertical-align:text-bottom;
+	/**margin:20px20px0px20px;*/
+	
+	padding-top:10px;
+	padding-bottom:5px;
+	padding-right:5px;
+	padding-left:15px;	
 }
 
 .sendButton {
-  display: block;
-  font-size: 16pt;
-}
-
-/** Most GWT widgets already have a style name defined */
-.gwt-DialogBox {
-  width: 400px;
+	display:block;
+	font-size:16pt;
+} /** Most GWT widgets already have a style name defined */ .gwt-DialogBox {
+	width:400px;
 }
 
 .dialogVPanel {
-  margin: 5px;
+	margin:5px;
 }
 
 .serverResponseLabelError {
-  color: red;
-}
-
-/** Set ids using widget.getElement().setId("idOfElement") */
-#closeButton {
-  margin: 15px 6px 6px;
+	color:red;
+} /** Set ids using widget.getElement().setId("idOfElement") */ #closeButton {
+	margin:15px6px6px;
 }

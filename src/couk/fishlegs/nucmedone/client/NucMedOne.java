@@ -16,6 +16,8 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+import couk.fishlegs.nucmedone.client.gui.ChamberPanel;
+import couk.fishlegs.nucmedone.client.gui.DispensingPanel;
 import couk.fishlegs.nucmedone.client.security.AuthService;
 import couk.fishlegs.nucmedone.client.security.AuthServiceAsync;
 import couk.fishlegs.nucmedone.shared.FieldVerifier;
@@ -48,13 +50,12 @@ public class NucMedOne implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 		
-		final Button aButton = new Button("Slurp");
-		final Button anButton = new Button("Slurper");
+		VerticalPanel vpanel = getChamberPanel();
+		vpanel.setHorizontalAlignment(VerticalPanel.ALIGN_LEFT);
+		RootPanel.get("chamber").add(vpanel);
 		
-		
-		
-		RootPanel.get("main").add(aButton);
-		
+		VerticalPanel dispensingPanel = DispensingPanel.getDispensingPanel();
+		RootPanel.get("main").add(dispensingPanel);
 		
 		final Button sendButton = new Button("Send");
 		final TextBox nameField = new TextBox();
@@ -65,29 +66,29 @@ public class NucMedOne implements EntryPoint {
 		sendButton.addStyleName("sendButton");
 
 		// Add the nameField and sendButton to the RootPanel
-		// Use RootPanel.get() to get the entire body element
-		RootPanel.get("nameFieldContainer").add(nameField);
-		RootPanel.get("sendButtonContainer").add(sendButton);
-		RootPanel.get("errorLabelContainer").add(errorLabel);
+//		RootPanel.get("nameFieldContainer").add(nameField);
+//		RootPanel.get("sendButtonContainer").add(sendButton);
+//		RootPanel.get("errorLabelContainer").add(errorLabel);
 
-		// Focus the cursor on the name field when the app loads
 		nameField.setFocus(true);
 		nameField.selectAll();
 
 		// Create the popup dialog box
 		final DialogBox dialogBox = new DialogBox();
+		// Focus the cursor on the name field when the app loads
 		dialogBox.setText("Remote Procedure Call");
 		dialogBox.setAnimationEnabled(true);
 		final Button closeButton = new Button("Close");
+		final HTML serverResponseLabel = new HTML();
 		// We can set the id of a widget by accessing its Element
 		closeButton.getElement().setId("closeButton");
 		final Label textToServerLabel = new Label();
-		final HTML serverResponseLabel = new HTML();
 		VerticalPanel dialogVPanel = new VerticalPanel();
 		dialogVPanel.addStyleName("dialogVPanel");
 		dialogVPanel.add(new HTML("<b>Sending name to the server:</b>"));
 		dialogVPanel.add(textToServerLabel);
 		dialogVPanel.add(new HTML("<br><b>Server replies:</b>"));
+		// Use RootPanel.get() to get the entire body element
 		dialogVPanel.add(serverResponseLabel);
 		dialogVPanel.setHorizontalAlignment(VerticalPanel.ALIGN_RIGHT);
 		dialogVPanel.add(closeButton);
@@ -178,4 +179,9 @@ public class NucMedOne implements EntryPoint {
 		});
 		
 	}
+
+	private VerticalPanel getChamberPanel(){
+		return ChamberPanel.getChamberPanel();
+	}
+	
 }
