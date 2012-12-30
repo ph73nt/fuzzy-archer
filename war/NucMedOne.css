@@ -8,6 +8,18 @@
 	text-align:center;
 }
 
+.title {
+	font-size:3em;
+	font-weight:bold;
+	color:#3333CC;
+	vertical-align:text-bottom;
+	
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-right:5px;
+	padding-left:5px;
+}
+
 .chamber {
 	background-color:#000000;
 	vertical-align:bottom;
@@ -19,7 +31,6 @@
 	color:#00FF22;
 	background-color:#000000;
 	vertical-align:text-bottom;
-	/**margin:5px20px20px20px;*/
 	
 	padding-top:0px;
 	padding-bottom:5px;
@@ -31,8 +42,7 @@
 	color:#00FF22;
 	background-color:#000000;
 	vertical-align:text-bottom;
-	/**margin:20px20px20px0px;*/
-	
+		
 	padding-top:5px;
 	padding-bottom:15px;
 	padding-right:15px;
@@ -43,7 +53,6 @@
 	color:#00FF22;
 	background-color:#000000;
 	vertical-align:text-bottom;
-	/**margin:20px20px0px20px;*/
 	
 	padding-top:10px;
 	padding-bottom:5px;

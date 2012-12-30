@@ -11,6 +11,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
@@ -18,6 +19,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 import couk.fishlegs.nucmedone.client.gui.ChamberPanel;
 import couk.fishlegs.nucmedone.client.gui.DispensingPanel;
+import couk.fishlegs.nucmedone.client.gui.NavigationPanel;
 import couk.fishlegs.nucmedone.client.security.AuthService;
 import couk.fishlegs.nucmedone.client.security.AuthServiceAsync;
 import couk.fishlegs.nucmedone.shared.FieldVerifier;
@@ -54,8 +56,11 @@ public class NucMedOne implements EntryPoint {
 		vpanel.setHorizontalAlignment(VerticalPanel.ALIGN_LEFT);
 		RootPanel.get("chamber").add(vpanel);
 		
+		HorizontalPanel hpanel = new HorizontalPanel();
+		hpanel.add(NavigationPanel.getNavigationPanel());
 		VerticalPanel dispensingPanel = DispensingPanel.getDispensingPanel();
-		RootPanel.get("main").add(dispensingPanel);
+		hpanel.add(dispensingPanel);
+		RootPanel.get("main").add(hpanel);
 		
 		final Button sendButton = new Button("Send");
 		final TextBox nameField = new TextBox();
