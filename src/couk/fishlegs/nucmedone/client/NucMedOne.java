@@ -52,15 +52,12 @@ public class NucMedOne implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 		
-		VerticalPanel vpanel = getChamberPanel();
-		vpanel.setHorizontalAlignment(VerticalPanel.ALIGN_LEFT);
-		RootPanel.get("chamber").add(vpanel);
+		RootPanel.get("chamber").add(getChamberPanel());
 		
-		HorizontalPanel hpanel = new HorizontalPanel();
-		hpanel.add(NavigationPanel.getNavigationPanel());
+		RootPanel.get("navigationPanel").add(NavigationPanel.getNavigationPanel());
+		
 		VerticalPanel dispensingPanel = DispensingPanel.getDispensingPanel();
-		hpanel.add(dispensingPanel);
-		RootPanel.get("main").add(hpanel);
+		RootPanel.get("main").add(dispensingPanel);
 		
 		final Button sendButton = new Button("Send");
 		final TextBox nameField = new TextBox();

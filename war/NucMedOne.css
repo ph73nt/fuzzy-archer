@@ -15,21 +15,51 @@
 	vertical-align:text-bottom;
 	
 	padding-top:5px;
+	padding-bottom:0px;
+	padding-right:50px;
+	padding-left:5px;
+}
+
+.subTitle {
+	font-size:1em;
+	font-weight:normal;
+	color:#3333CC;
+	vertical-align:text-bottom;
+	
+	padding-top:0px;
 	padding-bottom:5px;
 	padding-right:5px;
 	padding-left:5px;
 }
 
+.main {
+	padding-top:30px;
+	vertical-align:top;
+}
+
+.navigationPanel {
+	font-weight:bold;
+	padding-right:30px;
+	padding-top:0px;
+	min-width:180px;
+	vertical-align:top;
+}
+
 .chamber {
-	background-color:#000000;
+	background-color:#111111;
 	vertical-align:bottom;
+	min-width:200px;
+	border:2px solid;
+	border-color:#000000;
+	border-radius:25px;
+	-moz-border-radius:25px;
+	box-shadow: 5px 5px 3px #888888;
 }
 
 .chamber_activity {
 	font-size:3em;
 	font-weight:bold;
 	color:#00FF22;
-	background-color:#000000;
 	vertical-align:text-bottom;
 	
 	padding-top:0px;
@@ -40,7 +70,6 @@
 
 .chamber_units {
 	color:#00FF22;
-	background-color:#000000;
 	vertical-align:text-bottom;
 		
 	padding-top:5px;
@@ -51,7 +80,6 @@
 
 .chamber_nuclide {
 	color:#00FF22;
-	background-color:#000000;
 	vertical-align:text-bottom;
 	
 	padding-top:10px;
@@ -60,10 +88,18 @@
 	padding-left:15px;	
 }
 
+.navigationPanel {
+	padding-top:10px;
+	padding-right:50px;	
+}
+
 .sendButton {
 	display:block;
 	font-size:16pt;
-} /** Most GWT widgets already have a style name defined */ .gwt-DialogBox {
+} 
+
+/** Most GWT widgets already have a style name defined */ 
+.gwt-DialogBox {
 	width:400px;
 }
 

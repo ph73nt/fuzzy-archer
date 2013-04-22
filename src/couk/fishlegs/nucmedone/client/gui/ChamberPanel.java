@@ -35,6 +35,8 @@ public class ChamberPanel {
 		units.addStyleName("chamber_units");
 		hpanel.add(units);
 		
+		vpanel.setHorizontalAlignment(HorizontalPanel.ALIGN_CENTER);
+		
 		return vpanel;
 		
 	}
